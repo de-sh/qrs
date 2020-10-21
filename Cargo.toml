@@ -1,0 +1,12 @@
+[package]
+name = "qrs"
+version = "0.1.0"
+authors = ["Devdutt Shenoi <devdutt@outlook.in>"]
+edition = "2018"
+
+[dependencies]
+actix-web = "3"
+actix-cors = "0.3"
+actix-files = "0.4"
+qrcode = "0.11"
+serde = "1"
