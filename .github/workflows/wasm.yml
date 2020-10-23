@@ -20,9 +20,9 @@ jobs:
     - name: Setup
       run: cargo install wasm-pack wasm-gc && rustup target add wasm32-unknown-unknown && rustup override set nightly
     - name: Build
-      run: cargo build --target wasm32-unknown-unknown --release
+      run: wasm-pack build --target web
     - name: Optimise
-      run: wasm-gc target/wasm32-unknown-unknown/release/qrs.wasm
+      run: wasm-gc pkg/qrs_bg.wasm
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:

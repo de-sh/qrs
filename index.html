@@ -12,30 +12,11 @@
             margin-top: 10rem;
         }
     </style>
-
-    <script type="module">
-        import exec from "./index.js";
-        const get = document.querySelector;
-        get("#exec").onclick = exec(get('#input'));
-    </script>
+    <script type="module" src="./index.js"></script>
 </head>
 
 <body>
-    <div class="container top">
-        <h2>QR Coder</h2>
-        <p>Paste the link or text you want to convert to a QR Code below</p>
-    </div>
-
-    <div class="container">
-        <div class="form-group">
-            <label for="inputArea">Paste your text here</label>
-            <input type="text" class="form-control" id="input" placeholder="Paste the link/text here."
-                name="input" required>
-        </div>
-        <button id="exec" class="btn btn-primary">Generate</button>
-
-        <div class="result"></div>
-    </div>
+    <div id="wrapper" class="container top"></div>
 </body>
 
 </html>

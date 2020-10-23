@@ -5,17 +5,14 @@ use wasm_bindgen::prelude::*;
 /// Generate the QR code as an SVG xml string
 #[wasm_bindgen]
 pub fn gen_qrcode(input: String) -> String {
-    println!("- {:?}", input);
-
     // Encode user input into bits.
     let code = QrCode::new(input).unwrap();
 
-    // Render the an SVG
+    // Render an SVG
     let out = code.render::<svg::Color>().min_dimensions(200, 200).build();
 
-    println!("{}", out);
-
-    out
+    // Return the SVG as a String
+    format!("{}", out).into()
 }
 
 #[cfg(test)]
