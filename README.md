@@ -1,12 +1,26 @@
 # QRust
 Generate QR codes with rust
 
-Started off as a server-side app, [inspired from this article](https://www.kiranjohns.xyz/blog/firebase-qr/) by Kiran Johns and built with [kennytm/qrcode-rs](https://github.com/kennytm/qrcode-rust), possibly this goes on to become a rust microservice, even a client side PWA(in rust-wasm). Let's see!
+Started off as a server-side app and now is a client side web-app using WASM!
 
-### Run the backend
+[inspired from this article](https://www.kiranjohns.xyz/blog/firebase-qr/) by Kiran Johns and built with [kennytm/qrcode-rs](https://github.com/kennytm/qrcode-rust).
+
+### Compile WASM
+1. Setup the environment for WASM compilation
 ```rust
-cargo run
+rustup target add wasm32-unknown-unknown
+rustup override set nightly
+cargo install wasm-pack wasm-gc
+```
+2. Generate the WASM and bindings
+```rust
+wasm-pack build --target web
+wasm-gc pkg/qrs_bg.wasm
 ```
 
-### View the frontend
-- Open `http://localhost:8080` in a browser.
+### View the Creation
+1. Setup a web-server to host the following files & folders in particular:
+    - index.html - The html that loads the app.
+    - index.js - The JS that starts the show.
+    - pkg/ - The package folder that houses our wasm and bindings generated with [`wasm-pack`](https://github.com/rustwasm/wasm-pack).
+2. Open `http://localhost:8080` in a browser.
