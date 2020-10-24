@@ -1,3 +1,11 @@
+<p align="center"><img src="docs/qrs.svg" width="350px"/></p>
+
+<div align="center">
+
+![GitHub Workflow - rust-wasm](https://github.com/de-sh/qrs/workflows/rust-wasm/badge.svg)
+
+</div>
+
 # QRust
 Generate QR codes with rust
 

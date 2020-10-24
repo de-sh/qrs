@@ -1,8 +1,8 @@
-name: Build and Deploy rust-wasm
+name: rust-wasm
 
 on:
   push:
-    branches: [ wasm ]
+    branches: [ main ]
 
 env:
   CARGO_TERM_COLOR: always
