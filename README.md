@@ -2,7 +2,8 @@
 
 <div align="center">
 
-![GitHub Workflow - rust-wasm](https://github.com/de-sh/qrs/workflows/rust-wasm/badge.svg)
+[![GitHub Workflow - rust-wasm](https://github.com/de-sh/qrs/workflows/rust-wasm/badge.svg)](https://github.com/de-sh/qrs/actions/workflows/wasm.yml)
+[![Rust Report Card](https://rust-reportcard.xuri.me/badge/github.com/de-sh/qrs)](https://rust-reportcard.xuri.me/report/github.com/de-sh/qrs)
 
 </div>
 
