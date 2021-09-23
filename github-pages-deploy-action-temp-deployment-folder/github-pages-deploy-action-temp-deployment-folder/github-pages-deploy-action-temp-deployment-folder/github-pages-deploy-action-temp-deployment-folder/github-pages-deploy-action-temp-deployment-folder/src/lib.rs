@@ -8,8 +8,11 @@ pub fn gen_qrcode(input: String) -> String {
     // Encode user input into bits.
     let code = QrCode::new(input).unwrap();
 
-    // Render an SVG, return it as a String
-    code.render::<svg::Color>().min_dimensions(200, 200).build()
+    // Render an SVG
+    let out = code.render::<svg::Color>().min_dimensions(200, 200).build();
+
+    // Return the SVG as a String
+    format!("{}", out).into()
 }
 
 #[cfg(test)]
