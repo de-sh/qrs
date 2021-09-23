@@ -1,0 +1,10 @@
+status = [ "Build" ]
+block_labels = [
+  ":hand: blocked",
+  ":construction: wip",
+  "on hold"
+]
+
+required_approvals = 1
+cut_body_after = "\n\n"
+timeout_sec=7200
