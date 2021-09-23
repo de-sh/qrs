@@ -19,15 +19,8 @@ jobs:
       uses: actions/checkout@v2.3.1
       with:
         persist-credentials: false
-    - uses: actions/cache@v2
-      with:
-        path: |
-          ~/.cargo/bin/
-          ~/.cargo/registry/index/
-          ~/.cargo/registry/cache/
-          ~/.cargo/git/db/
-          target/
-        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+    - name: Cache Dependencies
+      uses: Swatinem/rust-cache@v1.2.0
     - name: Setup
       run: cargo install wasm-pack wasm-gc && rustup target add wasm32-unknown-unknown && rustup override set nightly
     - name: Build
@@ -41,3 +34,7 @@ jobs:
           BRANCH: gh-pages 
           FOLDER: ./
           CLEAN: true
+    - name: Clear the cargo caches
+      run: |
+          cargo install cargo-cache --version 0.6.2 --no-default-features --features ci-autoclean
+          cargo-cache
